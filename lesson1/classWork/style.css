@@ -1,0 +1,36 @@
+.target{
+    background: cornflowerblue;
+    width: 300px;
+    border: black solid 1px;
+}
+.target2{
+    background: cornflowerblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+
+}
+.target2 > div{
+    width: 300px;
+    border: black solid 1px;
+}
+.inner h2{
+    text-align: center;
+}
+.products-box{
+    display: flex;
+    justify-content: space-evenly;
+}
+.product-card h3{
+    text-align: center;
+}
+.product-card{
+    height: 350px;
+    background: greenyellow;
+    border: black solid 1px;
+    box-sizing: border-box;
+}
+.products-box img{
+    width: 200px;
+    height: 250px;
+}
