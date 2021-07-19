@@ -1,0 +1,14 @@
+body{
+    background: grey;
+}
+.wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.wrap > div{
+    background: greenyellow;
+    height: 300px;
+    width: 150px;
+    margin: 10px;
+}

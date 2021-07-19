@@ -1,0 +1,12 @@
+body{
+    background: grey;
+}
+.user-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.user-block{
+    width: 48%;
+    border: black solid 2px;
+    margin: 5px;
+}
