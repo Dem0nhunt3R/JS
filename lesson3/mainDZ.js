@@ -22,17 +22,21 @@
 
 // 4  створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
 
-// function fx(a,b){
-//     if (a>b){
-//         document.write(a);
-//         return b;
+// function fx() {
+//     let min = arguments[0];
+//     let max = arguments[0];
+//     for (let i = 0; i < arguments.length; i++) {
+//         if (arguments[i] > max)
+//             max = arguments[i];
+//
+//         if (arguments[i] < min)
+//             min = arguments[i];
 //     }
-//     else{
-//         document.write(b);
-//         return a;
-//     }
+//     console.log(max);
+//     return min;
 // }
-// fx(4,9);
+//
+// fx(4, 9, 9, 7, 6, 5, 55, 7, 98, -66, 99);
 
 // 5 створити функцію яка  створює блок з текстом. Текст задати через аргумент
 
@@ -60,7 +64,9 @@
 // function list2(t,i){
 //     for (let j = 0; j < i; j++) {
 //         document.write(`<div>
+//             <ol>
 //             <li>${t}</li>
+//             </ol>
 //         </div>`)
 //     }
 //     document.write()
@@ -71,11 +77,12 @@
 // 8 створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 
 // function arrayList(arr) {
-//     for (let i = 0; i < arr.length; i++) {
-//         document.write(`<ul>
-//             <li>${arr[i]}</li>
-//         </ul>`)
-//     }
+//     document.write(`<ul>`)
+//         for (let i = 0; i < arr.length; i++)
+//             document.write(`<li>
+//                 ${arr[i]}
+//             </li>`);
+//     document.write(`</ul>`);
 // }
 //
 // arrayList(["wqewqe",21321321,324234,213123,true,false,false,"gogogo"]);
