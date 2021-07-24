@@ -2,7 +2,7 @@
 
 function random() {
     let arr = [];
-    for (let i = 0; i < 51; i++) {
+    for (let i = 0; i < 10; i++) {
         arr[i] = Math.round(Math.random() * 100);
     }
     return arr;
@@ -11,15 +11,15 @@ function random() {
 // console.log(random());
 
 // 2 - Змінти попередню функцію, щоб діапазон можна було визначити через аргументи.
-// function random2(b){
-//     let arr = [];
-//     for (let i = 0; i < b; i++) {
-//         arr[i] = Math.round(Math.random()*100);
-//     }
-//     return arr;
-// }
-//
-// console.log(random2(10));
+function random2(min, max) {
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = Math.floor(Math.random()*(max-min)+min);
+    }
+    return arr;
+}
+
+// console.log(random2(0,10));
 
 // 3 - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. Відсортувати його за допомоги sort
 
@@ -33,19 +33,12 @@ random().filter(a => a % 2 === 0);
 // 5 - - створити масив рандомних цілих числових значень (або згенерувати, за допомоги попередньої функції) .
 // за допомоги map та колбеку перетворити всі об'єкти в масиві на срінгові.
 
-// let array = random();
-//
-// function toStringer(arr,callback){
-//     callback();
-//     return arr;
-// }
-//
-// let array2 = toStringer(array,function (){
-//     for (let i = 0; i < array.length; i++) {
-//         array[i]=array[i].toString();
-//     }
-// })
-// console.log(array2);
+let array = random();
+let map = array.map(function (value){
+    return `${value}`;
+})
+console.log(map);
+
 
 // 6 - - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
 
@@ -75,11 +68,11 @@ userArray[9] = new User(100, 'Dima10', 'Doma10', 'DD10@example@com', '123456789'
 
 // 8 Взяти масив цей  User[] та: Відфільтрувати ,
 // залишивши тільки об'єкти з парними id (filter) та Відсортувати його по id. по зростанню (sort)
-let array = userArray.filter(id=>id.id%2===0)
-console.log(array);
-
-array.sort((a,b) => a.id-b.id);
-console.log(array);
+// let array = userArray.filter(id => id.id % 2 === 0)
+// console.log(array);
+//
+// array.sort((a, b) => a.id - b.id);
+// console.log(array);
 
 
 
