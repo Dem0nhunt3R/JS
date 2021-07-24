@@ -142,7 +142,7 @@ let arr = [];
 for (let i = 0; i < 10; i++) {
     arr[i] = new Cinderella("Cinderella" + `${i + 1}`, 10 + i, 30 + i);
 }
-console.log(arr);
+
 
 class Prince {
     name;
@@ -154,14 +154,20 @@ class Prince {
         this.age = age;
         this.slipper = slipper;
     }
+    search(cinders){
+        for (const cinder of cinders) {
+            if (cinder.size === this.slipper)
+                return cinder.name;
+        }
+    }
 }
 
 let prince = new Prince("Prince", 101, 36);
 
-for(let cinder of arr){
-    if(cinder.size===prince.slipper)
-        console.log("this one ====> "+cinder.name);
-}
+console.log(prince.search(arr));;
 
-if(arr.find(a=>arr.size===prince.slipper))
-    console.log("This one ====> "+arr.name);
+let a = arr.find(function (value){
+    return value.name===prince.search(arr)
+})
+
+console.log(a);
