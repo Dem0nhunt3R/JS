@@ -155,19 +155,16 @@ class Prince {
         this.slipper = slipper;
     }
     search(cinders){
-        for (const cinder of cinders) {
-            if (cinder.size === this.slipper)
-                return cinder.name;
-        }
+        return cinders.find(value => value.size===this.slipper)
     }
 }
 
 let prince = new Prince("Prince", 101, 36);
 
-console.log(prince.search(arr));;
+console.log(prince.search(arr));
 
-let a = arr.find(function (value){
-    return value.name===prince.search(arr)
-})
+for (const arrElement of arr) {
+    if (arrElement === prince.search(arr))
+        console.log("zaebalo s ney vozitsya=>"+arrElement.name);
+}
 
-console.log(a);
