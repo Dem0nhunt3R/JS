@@ -20,13 +20,18 @@ console.log(rules2);
 
 // -- змініть кожному елементу колір фону на червоний
 
-const allRed = document.getElementsByTagName('p')[0];
-allRed.style.backgroundColor = 'red';
-const allRed2 = document.getElementsByTagName('div')[0];
-allRed2.style.backgroundColor = 'red';
-const allRed3 = document.getElementsByTagName('ul')[0]
-allRed3.style.backgroundColor = 'red';
-
+const allRed = document.getElementsByTagName('p');
+for (const allRedElement of allRed) {
+    allRedElement.style.backgroundColor = 'red';
+}
+const allRed2 = document.getElementsByTagName('div');
+for (const allRed2Element of allRed2) {
+    allRed2Element.style.backgroundColor = 'red';
+}
+const allRed3 = document.getElementsByTagName('ul');
+for (const allRed3Element of allRed3) {
+    allRed3Element.style.backgroundColor = 'red';
+}
 // -- змініть кожному елементу колір тексту на синій
 
 const blueP = document.getElementsByTagName('p')[0].style.color = 'blue';
