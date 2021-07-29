@@ -32,6 +32,8 @@ const allRed3 = document.getElementsByTagName('ul');
 for (const allRed3Element of allRed3) {
     allRed3Element.style.backgroundColor = 'red';
 }
+
+
 // -- змініть кожному елементу колір тексту на синій
 
 const blueP = document.getElementsByTagName('p')[0].style.color = 'blue';
@@ -47,10 +49,10 @@ console.log(classes.classList);
 
 let fcRules = document.getElementsByClassName('fc_rules');
 for (const fcRule of fcRules) {
-    fcRule.onclick = function (){
-        console.log(fcRule.innerHTML);
-        console.log('sadsad');
-    }
+    fcRule.addEventListener('click',() => console.log(fcRule.textContent));
+}
+for (const fcRule of fcRules) {
+    fcRule.addEventListener('click',() => console.log("fcRule.textContent"));
 }
 
 // -- поміняти колір тексту у всіх елементів fc_rules на червоний
