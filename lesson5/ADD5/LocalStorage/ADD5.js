@@ -19,7 +19,7 @@
 let form2 = document.forms.market;
 let items = [];
 
-form2.addEventListener('submit',(ev) => {
+form2.addEventListener('submit', (ev) => {
     ev.preventDefault();
     const item = {
         name: form2.name.value,
@@ -28,8 +28,8 @@ form2.addEventListener('submit',(ev) => {
         url: form2.url.value
     };
     items.push(item);
-    localStorage.setItem('items', JSON.stringify(items));
-    }
-)
+    let jsonItems = JSON.stringify(items);
+    localStorage.setItem('items', jsonItems);
+});
 
-
+items=JSON.parse(localStorage.getItem('items'))||[];

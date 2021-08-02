@@ -1,31 +1,46 @@
-//     створити елемент <a href='list.html'> На сторінку товарів</a>, та list.html, при переході на який відобразити на сторінці всі товари.
-
-let items = localStorage.getItem('items');
-let item;
-if (items) {
-    item = JSON.parse(items);
-    for (const itemElement of item) {
-        document.write(`<h1>${itemElement.name}  ${itemElement.quantity} - ${itemElement.price}</h1>`);
-        document.write(`<img src="${itemElement.url}" alt=""/>`);
-        //     До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний обраний  товар
-        document.write(`<button id="remover">remove it</button>`);
-        let remover = document.getElementById('remover');
-        remover.addEventListener('click',(ev) =>{
-            ev.preventDefault();
-            localStorage.removeItem('itemElement');
-        })
-    }
-    document.write(`</div>`);
-
-} else {
-    console.log("It is empty now");
-}
 // На сторінці  list.html побудувати кнопку яка видаляє всі товари з корзини та локалстораджа.
-document.write(`<button >remove it all</button>`);
-let button = document.getElementsByTagName('button')[0];
-button.addEventListener("click", (ev) => {
+//     До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний обраний  товар
+
+let deleteBtn = document.createElement('button');
+deleteBtn.addEventListener('click',(ev)=>{
     localStorage.clear();
-})
+});
+deleteBtn.innerText='delete cart';
+document.body.append(deleteBtn);
+
+let productsDiv = document.getElementsByClassName('products')[0];
+
+let products = JSON.parse(localStorage.getItem('items'));
+
+for (const product of products) {
+    let count = 0;
+    let productDiv = document.createElement('div');
+
+    let productName = document.createElement('h1');
+    productName.innerText = product.name;
+    productDiv.append(productName);
+
+    let productQuantityAndPrice = document.createElement('h2');
+    productQuantityAndPrice.innerText = `1${product.quantity} - ${product.price}`;
+    productDiv.append(productQuantityAndPrice);
+
+    let productImage = document.createElement('img');
+    productImage.src = product.url;
+    productDiv.append(productImage);
+
+    let deleteProductBtn = document.createElement('button');
+    deleteProductBtn.innerText = 'delete';
+    deleteProductBtn.onclick = function (ev) {
+        let index = products.indexOf(product);
+        products.splice(index,1);
+        localStorage.setItem('items', JSON.stringify(products));
+        deleteProductBtn.disabled = true;
+    }
+    productDiv.append(deleteProductBtn);
+
+    productsDiv.append(productDiv);
+}
+
 
 
 
