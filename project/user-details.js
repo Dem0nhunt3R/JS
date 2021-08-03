@@ -50,6 +50,7 @@ postBtn.addEventListener('click', (ev) => {
     fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
         .then(response => response.json())
         .then(value => {
+            console.log(value);
             postsBox.innerText = '';
             for (const item of value) {
                 let postDiv = document.createElement('div');
@@ -58,7 +59,7 @@ postBtn.addEventListener('click', (ev) => {
                 postsBox.append(postDiv);
 
                 let postDetailsBtn = document.createElement('button');
-                postDetailsBtn.innerText = 'post details';
+                postDetailsBtn.innerText = `post #${item.id} details`;
                 postDetailsBtn.style.marginLeft = '10px';
                 postDetailsBtn.addEventListener('click', (ev) => {
                     document.location = 'post-details.html';
