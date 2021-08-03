@@ -1,0 +1,27 @@
+body{
+    background: lightblue;
+}
+.userDivStyle{
+    background: greenyellow;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.postBtnStyle{
+    margin-left: 80%;
+}
+.postsBoxStyle{
+    height: 300px;
+    border: 2px solid black;
+    background: cornflowerblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.postDivStyle{
+    height: 40%;
+    background: tomato;
+    width: 18%;
+    border: 1px solid blueviolet;
+}

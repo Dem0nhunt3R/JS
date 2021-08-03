@@ -1,0 +1,17 @@
+.userStyle{
+    width: 40%;
+    height: 200px;
+    background: lightblue;
+    border: 2px solid black;
+    margin: 30px;
+    text-align: center;
+}
+.usersBoxStyle{
+    background: greenyellow;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+}
+.pInfo{
+    padding-top: 50px;
+}
