@@ -21,8 +21,7 @@ fetch("https://jsonplaceholder.typicode.com/users")
             userDiv.append(userInfo);
             detailsFormBtn.innerText = 'to details';
             detailsFormBtn.addEventListener('click', (ev) => {
-                document.location = 'user-details.html';
-                localStorage.setItem('users', JSON.stringify(user));
+                location.href = `user-details.html?user=${JSON.stringify(user)}`
             })
             userDiv.append(detailsFormBtn);
             usersBox.append(userDiv);

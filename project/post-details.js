@@ -3,9 +3,8 @@
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации -
 // https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
 
-let post = JSON.parse(localStorage.getItem('post'));
-console.log(post);
-
+let postUrl = new URL(location).searchParams.get('post');
+let post = JSON.parse(postUrl);
 let commentsDiv = document.createElement('div');
 commentsDiv.classList.add('commentsDivStyle');
 

@@ -5,7 +5,8 @@
 //     6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
 //     которая имеет детальную информацию про текущий пост.
 
-let user = JSON.parse(localStorage.getItem('users'));
+let userUrl = new URL(location).searchParams.get('user');
+let user = JSON.parse(userUrl);
 console.log(user);
 let userDiv = document.createElement('div');
 userDiv.classList.add('userDivStyle');
@@ -62,8 +63,7 @@ postBtn.addEventListener('click', (ev) => {
                 postDetailsBtn.innerText = `post #${item.id} details`;
                 postDetailsBtn.style.marginLeft = '10px';
                 postDetailsBtn.addEventListener('click', (ev) => {
-                    document.location = 'post-details.html';
-                    localStorage.setItem('post', JSON.stringify(item))
+                    location.href = `post-details.html?post=${JSON.stringify(item)}`;
                 })
                 postDiv.append(postDetailsBtn);
             }
