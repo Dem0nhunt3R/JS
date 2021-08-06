@@ -26,5 +26,5 @@ fetch("https://jsonplaceholder.typicode.com/users")
             userDiv.append(detailsFormBtn);
             usersBox.append(userDiv);
         }
-    })
+    });
 

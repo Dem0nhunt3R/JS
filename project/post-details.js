@@ -36,8 +36,8 @@ commentsBtn.addEventListener('click', (ev) => {
                 commentDiv.append(pComment);
             document.body.append(commentDiv);
             }
-        })
-})
+        });
+});
 
 document.body.append(commentsDiv);
 

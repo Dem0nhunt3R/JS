@@ -45,7 +45,7 @@ postBtn.innerText = `Show posts of ${user.name}`;
 postBtn.classList.add('postBtnStyle');
 
 let postsBox = document.createElement('div');
-postsBox.classList.add('postsBoxStyle')
+postsBox.classList.add('postsBoxStyle');
 
 postBtn.addEventListener('click', (ev) => {
     fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
